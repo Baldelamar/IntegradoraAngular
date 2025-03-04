@@ -1,20 +1,22 @@
 
+
 .L {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background: linear-gradient(to top, #5C6BC0, #FFFF);
+    height: 100%;
     
 }
 
 .container{
     position: relative;
-    width: 850px;
+    width: 800px;
     height: 500px;
     background: #FFFF;
     border-radius: 30px;
-    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px 30px rgba(0.2, 0.2, 0.2, 0.2);
+    
 }
 .form-box{
     position: absolute;
@@ -32,6 +34,7 @@
 }
 
 form{
+    
     width: 100%;
 }
 
@@ -102,6 +105,7 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 30px;
 
     & h1{
         color: #5C6BC0;

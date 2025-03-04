@@ -7,3 +7,10 @@
   .toast-error {
     background-color: #0381f7 !important;
   }
+
+   html, body {
+   height: 100%;
+    margin: 0;
+   padding: 0;
+  //  overflow: hidden; /* Evita el desplazamiento innecesario */
+  }

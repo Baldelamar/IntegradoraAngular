@@ -1,12 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { Router } from 'express';
 import { ToastrService } from 'ngx-toastr';
 import { last } from 'rxjs';
 
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,RouterModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
