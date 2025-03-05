@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    background: linear-gradient(to top, #5C6BC0, #FFFF);
+    background: linear-gradient(to top, #5C6BC0 20%, #FFFF 100%);
     
 }
 
@@ -129,4 +129,46 @@ form{
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
+}
+
+@media screen and (max-width: 800px){
+    .L{
+        background: none;
+    }
+    .container{
+        height: 90%;
+    }
+    .container h1{
+        font-size: 32px;
+    }
+    .form-box{
+        bottom: 0;
+        width: 100%;
+        height: 78%;
+        padding: 30px;
+        border-start-start-radius: 0px;
+        border-radius: 30px;
+       
+    }
+    .toggle-panel .toggle-left{
+        top: 0;
+
+    }
+    .toggle-panel{
+        width: 100%;
+        height: 25%;
+        border-radius: 40px;
+    }
+    .toggle-panel h1{
+        margin-bottom: 5px;
+    }
+    .toggle-panel p{
+        margin-bottom: 5px;
+    }
+    .toggle-panel .btn{
+        height: 42px;
+    }
+    
+    
+    
 }
