@@ -76,13 +76,17 @@ section{
 }
 
 h4{
-    font-size: 3vmin;
+    font-size: 5vmin;
     color: #089ce2;
     margin: 20px auto;
 }
 p{
     color: black;
     padding: 0px 40px;
+}
+
+.row .col p{
+    font-size: 3vmin;
 }
 
 
@@ -103,10 +107,16 @@ p{
 }
 
 .explorar-contenido h1{
-    font-size: 4vmin;
+    font-size: 8vmin;
     color: #089ce2;
+    margin: 20px;
 }
 
+.explorar-contenido p{
+    width: 60%;
+    font-size: 3vmin;
+    color: black;
+}
 @media screen and (max-width: 800px){
    
     
