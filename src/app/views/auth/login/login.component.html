@@ -1,17 +1,17 @@
 <div class="L">
 <div class="container">
     <div class="form-box login">
-    <form action="">
+    <form [formGroup]="FormularioLogin">
         <h1>Inicia Sesión</h1>
         <div class="input-box">
-            <input type="text" placeholder="Email">
+            <input type="text" formControlName="email" placeholder="Email">
             <i class="bi bi-envelope"></i>
         </div>
         <div class="input-box">
-            <input type="password" placeholder="Password">
+            <input type="password" formControlName="password" placeholder="Password">
             <i class="bi bi-lock-fill"></i>
         </div>
-        <button type="button" class="btn">Iniciar Sesión</button>
+        <button type="button" (click)="onLogin()" class="btn">Iniciar Sesión</button>
     </form>
     </div>
     <div class="toggle-box">
