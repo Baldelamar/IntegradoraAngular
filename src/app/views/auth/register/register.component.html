@@ -1,33 +1,33 @@
 <div class="L">
     <div class="container">
         <div class="form-box register">
-        <form action="">
+        <form [formGroup]="FormularioRegister">
             <h1>Registrate</h1>
             <div class="input-box">
-                <input type="text" placeholder="Nombre">
+                <input type="text" formControlName="name" placeholder="Nombre">
                 <i class="bi bi-person-fill"></i>
             </div>
             <div class="input-box">
-                <input type="text" placeholder="Apellido Paterno">
+                <input type="text" formControlName="lastname" placeholder="Apellido Paterno">
                 <i class="bi bi-person-fill"></i>
             </div>
             <div class="input-box">
-                <input type="text" placeholder="ApellidoMaterno">
+                <input type="text" formControlName="lastname2" placeholder="ApellidoMaterno">
                 <i class="bi bi-person-fill"></i>
             </div>
             <div class="input-box">
-                <input type="text" placeholder="Email">
+                <input type="text" formControlName="email" placeholder="Email">
                 <i class="bi bi-envelope"></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Password">
+                <input type="password" formControlName="password" placeholder="Password">
                 <i class="bi bi-lock-fill"></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Confirm password">
+                <input type="password" formControlName="confirmpassword" placeholder="Confirmar Contraseña">
                 <i class="bi bi-lock-fill"></i>
             </div>
-            <button type="button" class="btn">Registrarse</button>
+            <button type="button" (click)="onRegister()" class="btn">Registrarse</button>
         </form>
         </div>
         <div class="toggle-box">
