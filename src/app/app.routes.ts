@@ -4,7 +4,6 @@ import { RegisterComponent } from './views/auth/register/register.component';
 import { LoginComponent } from './views/auth/login/login.component';
 import { NuestrosSensoresComponent } from './views/welcome/nuestros-sensores/nuestros-sensores.component';
 import { SobreNosotrosComponent } from './views/welcome/sobre-nosotros/sobre-nosotros.component';
-import { ContactanosComponent } from './views/welcome/contactanos/contactanos.component';
 import { ParaQuienComponent } from './views/welcome/para-quien/para-quien.component';
 
 export const routes: Routes = [
@@ -37,11 +36,6 @@ export const routes: Routes = [
         // RUTA SOBRE NUESTRA INFORMACION Y NUESTRO OBJETIVO
         path: 'SobreNosotros',
         component: SobreNosotrosComponent
-    },
-    {
-        // RUTA PARA CONTECTOS DE LA EMPRESA
-        path: 'Contactos',
-        component: ContactanosComponent
     },
     {
         //RUTA PARA QUIENES ESTA DIRIGIDO EL PROYECTO

@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators, AbstractControl } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { Router } from 'express';
+import { Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { last } from 'rxjs';
+import { Register } from '../../../core/models/register';
+import { RegisterService } from '../../../core/services/register.service';
 
 
 @Component({
@@ -15,12 +15,15 @@ import { last } from 'rxjs';
 export class RegisterComponent {
   // MI SERVICIO TOSTADA
   private tostada = inject(ToastrService);
+  private registerService = inject(RegisterService);
+  private router = inject(Router);
 
   // CREACION DE FORMULARIO
   FormularioRegister = new FormGroup({
     name: new FormControl('', Validators.required),
     lastname: new FormControl('', Validators.required),
     lastname2: new FormControl('', ),
+    birthdate: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
     confirmpassword: new FormControl('', Validators.required),
@@ -48,6 +51,33 @@ export class RegisterComponent {
 
   onRegister() {
     if (this.FormularioRegister.valid){
+      const formValues = this.FormularioRegister.value;
+      const registerData: Register = {
+        name: formValues.name || '',
+        lastname: formValues.lastname || '',
+        lastname2: formValues.lastname2 || '',
+        birthdate: formValues.birthdate || '',
+        email: formValues.email || '',
+        password: formValues.password || '',
+      };
+      
+      // this.registerService.register(registerData).subscribe({
+      //   next: (response) => {
+      //     console.log('Server response:', response);
+      //     this.tostada.success('Registro exitoso');
+      //     this.router.navigate(['/Login']);
+      //     this.FormularioRegister.reset();
+      //   },
+      //   error: (error) => {
+      //     console.log('Error completo:', error);
+      //     if (error.status === 422) {
+      //       console.log('Error de validación:', error.error);
+      //       this.tostada.error('Error de validación', 'Error');
+      //     } else {
+      //       this.tostada.error('Error en el registro', 'Error');
+      //     }
+      //   }
+      // });
 
     }
     else {
