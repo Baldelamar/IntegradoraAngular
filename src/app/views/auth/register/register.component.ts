@@ -50,7 +50,6 @@ export class RegisterComponent {
   }
 
   onRegister() {
-    if (this.FormularioRegister.valid){
       const formValues = this.FormularioRegister.value;
       const registerData: Register = {
         name: formValues.name || '',
@@ -61,34 +60,34 @@ export class RegisterComponent {
         password: formValues.password || '',
       };
       
-      // this.registerService.register(registerData).subscribe({
-      //   next: (response) => {
-      //     console.log('Server response:', response);
-      //     this.tostada.success('Registro exitoso');
-      //     this.router.navigate(['/Login']);
-      //     this.FormularioRegister.reset();
-      //   },
-      //   error: (error) => {
-      //     console.log('Error completo:', error);
-      //     if (error.status === 422) {
-      //       console.log('Error de validación:', error.error);
-      //       this.tostada.error('Error de validación', 'Error');
-      //     } else {
-      //       this.tostada.error('Error en el registro', 'Error');
-      //     }
-      //   }
-      // });
-
-    }
-    else {
-      const campos: { [key: string]: string } = { name: 'Nombre', lastname: 'Apellido Paterno', lastname2: 'Apellido Materno', email: 'Email', password: 'Contraseña', confirmpassword: 'Confirmar Contraseña' };
-
-      Object.keys(campos).forEach((key) => {
-        const errorMessage = this.getErrorMessage(key, campos[key]);
-        if (errorMessage) {
-          this.tostada.error(errorMessage, 'Error de validación');
+      this.registerService.register(registerData).subscribe({
+        next: (response) => {
+          console.log('Server response:', response);
+          this.tostada.success('Registro exitoso');
+          this.router.navigate(['/Login']);
+          this.FormularioRegister.reset();
+        },
+        error: (error) => {
+          console.log('Error completo:', error);
+          if (error.status === 422) {
+            console.log('Error de validación:', error.error);
+            this.tostada.error('Error de validación', 'Error');
+          } else {
+            this.tostada.error('Error en el registro', 'Error');
+          }
         }
       });
+
     }
-  }
+  //   else {
+  //     const campos: { [key: string]: string } = { name: 'Nombre', lastname: 'Apellido Paterno', lastname2: 'Apellido Materno', email: 'Email', password: 'Contraseña', confirmpassword: 'Confirmar Contraseña' };
+
+  //     Object.keys(campos).forEach((key) => {
+  //       const errorMessage = this.getErrorMessage(key, campos[key]);
+  //       if (errorMessage) {
+  //         this.tostada.error(errorMessage, 'Error de validación');
+  //       }
+  //     });
+  //   }
+  // }
 }
